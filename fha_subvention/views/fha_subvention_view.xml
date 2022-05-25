@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fha_subvention_view_form" model="ir.ui.view">
+        <field name="name">fha.subvention.form</field>
+        <field name="model">fha.subvention</field>
+        <field name="arch" type="xml">
+            <form string="Define Subvention">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name of subvention"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code" />
+                            <field name="partner_id"/>
+                        </group>
+                        <group>
+                            <field name="date_init" />
+                            <field name="date_end" />
+                        </group>
+                        <group>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="total_subvention"
+                                class="oe_inline"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            <field name="percentage"
+                                   style="width: 117px"
+                                   string="Percentage %"/>
+                            <field name="annual_subvention"
+                                class="oe_inline"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            <field name="annual_spend"
+                                class="oe_inline"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                        </group>
+                        <field name="description" placeholder="Subvention description..." />
+                    </group>
+                    <notebook position="inside">
+                        <page string="Items" name="item">
+                            <field name="subvention_item_ids">
+                                <tree editable="bottom">
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="concept_id" />
+                                    <field name="percentage" string="Percentage %" />
+                                    <field name="total_subvention" sum="Total" widget="monetary" />
+                                    <field name="total_expense" sum="Total" widget="monetary" />
+                                    <field name="percentage_expense" widget="progressbar" />
+                                    <button name="action_show_expenses"
+                                            string="Register expenses"
+                                            type="object"
+                                            icon="fa-list" />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="concept_id" />
+                                        </group>
+                                        <group>
+                                            <field name="percentage" string="Percentage %" />
+                                        </group>
+                                        <group>
+                                            <field name="currency_id" invisible="1"/>
+                                            <field name="total_subvention" widget="monetary" />
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 15%">
+                                        <p></p>
+                                    </td>
+                                    <td style="width: 15%">
+<!--                                        <field name="total_subvention"-->
+<!--                                               widget="gauge"-->
+<!--                                               style="width:80px;height:50px;cursor:pointer;"-->
+<!--                                               options="{'max_field': 100}"> Entry Progress </field>-->
+                                    </td>
+                                    <td style="width: 70%">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="fha_subvention_view_kanban" model="ir.ui.view" >
+        <field name="name">Subvention View</field>
+        <field name="model">fha.subvention</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="name" />
+                <field name="code" />
+                <field name="date_init" />
+                <field name="date_end" />
+                <field name="partner_id"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="total_subvention" />
+                <field name="annual_subvention" />
+                <field name="annual_spend" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="row mb4">
+                                <div class="oe_kanban_details col-6">
+                                    <strong>
+                                        <span t-esc="record.name.value"/> [ <span t-esc="record.code.value"/> ]
+                                    </strong>
+                                    <ul>
+                                        <li>Init <field name="date_init"/></li>
+                                        <li>End <field name="date_end"/></li>
+                                        <li><strong>Total <field name="total_subvention" widget="monetary" options="{'currency_field': 'currency_id'}" /></strong></li>
+                                        <li>
+                                            Anual <field name="annual_subvention"
+                                                        widget="monetary"
+                                                        options="{'currency_field': 'currency_id'}" />
+                                        </li>
+                                        <li>
+                                            Spend <field name="annual_spend"
+                                                        widget="monetary"
+                                                        options="{'currency_field': 'currency_id'}" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <img t-att-src="kanban_image('res.partner', 'image_128', record.partner_id.raw_value)"
+                                        t-att-title="record.partner_id.value"
+                                        t-att-alt="record.partner_id.value"
+                                        class="oe_kanban_avatar o_image_48_cover"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="fha_subvention_view_tree" model="ir.ui.view">
+        <field name="name">fha.subvention.tree</field>
+        <field name="model">fha.subvention</field>
+        <field name="arch" type="xml">
+            <tree string="Subventions">
+                <field name="name" />
+                <field name="code" />
+                <field name="date_init" />
+                <field name="date_end" />
+                <field name="partner_id"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="total_subvention" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                <field name="annual_subvention" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                <field name="annual_spend" widget="monetary" options="{'currency_field': 'currency_id'}" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="fha_subvention_view_filter" model="ir.ui.view">
+        <field name="name">fha.subvention.view.filter</field>
+        <field name="model">fha.subvention</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <search string="Search Subvention">
+                <filter string="Date Init" name="filter_create_date" date="date_init"/>
+                <filter string="Date End" name="filter_create_date" date="date_end"/>
+                <group expand="0" string="Group By">
+                    <filter string="Entity" name="partner_id" context="{'group_by': 'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_subvention_items_operations" model="ir.ui.view">
+        <field name="name">fha.subvention.item.form</field>
+        <field name="model">fha.subvention.item</field>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <form string="Expenses">
+                <group>
+                    <group>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="concept_id" readonly="1"/>
+                        <field name="percentage" string="Percentage %" readonly="1"/>
+                        <field name="total_subvention" readonly="1"/>
+                    </group>
+                </group>
+                <notebook position="inside">
+                    <page string="Expenses" name="expense">
+                        <field name="expense_ids"
+                               context="{'tree_view_ref': 'fha_subvention.view_expense_ids_tree'}"/>
+                    </page>
+                </notebook>
+                <footer class="oe_edit_only">
+                    <button string="Confirm" special="save" class="oe_highlight"/>
+                    <button string="Discard" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_expense_ids_tree" model="ir.ui.view">
+        <field name="name">fha.subvention.expense.tree</field>
+        <field name="model">fha.subvention.expense</field>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="item_id" invisible="1" force_save="1"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="total_expense" sum="Total" widget="monetary"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fha_subvention_action" model="ir.actions.act_window">
+        <field name="name">Subvention</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fha.subvention</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_id" ref="fha_subvention_view_tree" />
+        <field name="search_view_id" ref="fha_subvention_view_filter"/>
+    </record>
+
+    <menuitem name="Subvention"
+        id="fha_subvention_menu"
+        sequence="1"
+        web_icon="fha_subvention,static/description/icon.png"
+        groups="base.group_user"
+    />
+
+    <menuitem id="fha_subvention_menu_subvention"
+        name="Subvention"
+        parent="fha_subvention_menu"
+        sequence="2"
+    />
+
+    <menuitem id="fha_subvention_menu_subvention_subvention"
+        name="Subvention"
+        action="fha_subvention_action"
+        parent="fha_subvention_menu_subvention"
+        sequence="2"
+    />
+
+    <menuitem id="fha_subvention_menu_configuration"
+        name="Configuration"
+        parent="fha_subvention_menu"
+        sequence="2"
+    />
+
+</odoo>
+
+
+
