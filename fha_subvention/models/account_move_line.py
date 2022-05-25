@@ -7,17 +7,8 @@ from odoo import api, fields, models, _
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    subvention_id = fields.Many2one(
-        'fha.subvention',
-        string='Subvention',
-    )
-    item_id = fields.Many2one(
-        'fha.subvention.item',
-        string="Subvention Item",
-    )
-    expense_id = fields.Many2one(
-        'fha.subvention.expense',
-        'line_id',
-        string='Account move lines',
-    )
-
+    def create_analytic_lines(self):
+        context = self.env.context.copy()
+        context.update({'in_subvention_app': True})
+        self.env.context = context
+        return super().create_analytic_lines()

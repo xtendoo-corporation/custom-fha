@@ -17,7 +17,7 @@
     <record id="group_fha_administrator_subvention" model="res.groups">
         <field name="name">Administrator</field>
         <field name="category_id" ref="fha_subvention.module_category_subvention"/>
-        <field name="implied_ids" eval="[(4, ref('group_fha_user_subvention'))]"/>
+        <field name="implied_ids" eval="[(4, ref('fha_subvention.group_fha_user_subvention'))]"/>
         <field name="comment">the user will have access to create, update and delete subventions.</field>
     </record>
 

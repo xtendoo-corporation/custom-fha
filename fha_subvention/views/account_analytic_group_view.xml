@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="fha_subvention.account_analytic_group_form_view" model="ir.ui.view">
+        <field name="name">account.analytic.group.form</field>
+        <field name="model">account.analytic.group</field>
+        <field name="inherit_id" ref="analytic.account_analytic_group_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/sheet/group[1]/field[@name='parent_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//form/sheet/group[2]" position="after">
+                <field name="is_readonly" invisible="1"/>
+                <label for="is_subvention"
+                       groups="fha_subvention.group_fha_administrator_subvention"/>
+                <field name="is_subvention"
+                       groups="fha_subvention.group_fha_administrator_subvention"/>
+                <group attrs="{'invisible': [('is_subvention', '=', False)]}">
+                    <group>
+                        <field name="code"
+                               attrs="{'readonly':[('is_readonly','=', True)]}"/>
+                        <field name="partner_id"
+                               attrs="{'readonly':[('is_readonly','=', True)]}"/>
+                    </group>
+                    <group>
+                        <field name="date_init"
+                               attrs="{'readonly':[('is_readonly','=', True)]}"/>
+                        <field name="date_end"
+                               attrs="{'readonly':[('is_readonly','=', True)]}"/>
+                    </group>
+                    <group>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="total_subvention"
+                               class="oe_inline"
+                               widget="monetary"
+                               options="{'currency_field': 'currency_id', 'field_digits': True}"
+                               attrs="{'readonly':[('is_readonly','=', True)]}"/>
+                        <field name="percentage"
+                               style="width: 117px"
+                               string="Percentage %"
+                               attrs="{'readonly':[('is_readonly','=', True)]}"/>
+                        <field name="annual_subvention"
+                               string="Subsidized"
+                               class="oe_inline"
+                               widget="monetary"
+                               options="{'currency_field': 'currency_id', 'field_digits': True}"
+                               attrs="{'readonly':[('is_readonly','=', True)]}"/>
+                        <field name="justified_subvention"
+                               class="oe_inline"
+                               widget="monetary"
+                               options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                    </group>
+                    <group>
+                        <field name="project_id"
+                               attrs="{'readonly':[('is_readonly','=', True)]}"/>
+                    </group>
+                </group>
+                <notebook position="inside">
+                    <page string="Items" name="item">
+                        <field name="account_analytic_account_ids">
+                            <tree editable="bottom">
+                                <field name="currency_id" invisible="1" />
+                                <field name="name" string="Expense Type"/>
+                                <field name="code" />
+                                <field name="percentage" string="Percentage %" />
+                                <field name="total_subvention" sum="Total" widget="monetary" />
+                                <field name="total_expense" sum="Total" widget="monetary" />
+                                <field name="percentage_expense" widget="progressbar" />
+                                <button name="action_show_expenses"
+                                        string="Account Analytic Line"
+                                        type="object"
+                                        icon="fa-list" />
+                            </tree>
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="name" />
+                                    </group>
+                                    <group>
+                                        <field name="percentage" string="Percentage %" />
+                                    </group>
+                                    <group>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="total_subvention" widget="monetary" />
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fha_subvention.project_task_view_form_subvention" model="ir.ui.view">
+        <field name="name">project.task.form.view.inherit.subvention</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="multi_edit">1</attribute>
+            </tree>
+            <xpath expr="//field[@name='timesheet_ids']/tree" position="inside">
+                <field name="account_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fha_subvention.account_analytic_line_view_tree_subvention" model="ir.ui.view">
+        <field name="name">account.analytic.line.view.tree.subvention</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="multi_edit">1</attribute>
+            </tree>
+            <xpath expr="//field[@name='unit_amount']" position="before">
+                <field name="account_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
