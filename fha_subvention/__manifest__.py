@@ -14,6 +14,7 @@
         'purchase',
         'account',
         'hr_timesheet',
+        'fha_purchase_departments',
     ],
     'data': [
         'security/fha_subvention_security.xml',
