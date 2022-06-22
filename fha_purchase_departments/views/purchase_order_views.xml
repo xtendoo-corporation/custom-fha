@@ -8,7 +8,14 @@
         <field name="arch" type="xml">
             <field name="date_order" position="after">
                 <field name="department_id"/>
+                <field name="is_over_limit" invisible="1"/>
             </field>
+            <xpath expr="//sheet" position="before">
+                <div class="alert alert-warning mb-0" role="alert"
+                     attrs="{'invisible': [('is_over_limit', '=', False)]}">
+                    Este pedido de compra debe <b>acompañarse de tres presupuestos.</b>
+                </div>
+            </xpath>
         </field>
     </record>
 </odoo>
