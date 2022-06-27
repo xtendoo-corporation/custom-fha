@@ -13,6 +13,7 @@
     ],
     'license': 'AGPL-3',
     'data': [
+        'security/security_group.xml',
     ],
     'installable': True,
     'auto_install': True,
