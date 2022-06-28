@@ -2,9 +2,9 @@
 <odoo>
     <data>
         <!-- Grupo de comerciales -->
-        <record id="comercial_group" model="res.groups">
-            <field name="name">Comercials</field>
-            <field name="comment">Comercials Group </field>
+        <record id="operator_group" model="res.groups">
+            <field name="name">Operators</field>
+            <field name="comment">Operators Group </field>
         </record>
         <!-- Fin Grupo de comericiales -->
           <!-- Grupo de Admin -->
@@ -18,7 +18,7 @@
             <field name="name">Contactos: no crear ni editar</field>
             <field name="model_id" ref="base.model_res_partner"/>
             <field name="domain_force">[('user_id', '=', 'XXX')]</field>
-            <field name="groups" eval="[(4, ref('fha_administration.comercial_group'))]"/>
+            <field name="groups" eval="[(4, ref('fha_administration.operator_group'))]"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_unlink" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -30,7 +30,7 @@
             <field name="name">Productos: no crear ni editar</field>
             <field name="model_id" ref="product.model_product_product"/>
             <field name="domain_force">[('id', '=', '0')]</field>
-            <field name="groups" eval="[(4, ref('fha_administration.comercial_group'))]"/>
+            <field name="groups" eval="[(4, ref('fha_administration.operator_group'))]"/>
             <field name="perm_create" eval="True"/> <!-- no es permitir es aplicar-->
             <field name="perm_unlink" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -42,7 +42,7 @@
             <field name="name">Item Tarifas: no crear ni editar</field>
             <field name="model_id" ref="product.model_product_pricelist"/>
             <field name="domain_force">[('id','=', 0)]</field>
-            <field name="groups" eval="[(4, ref('fha_administration.comercial_group'))]"/>
+            <field name="groups" eval="[(4, ref('fha_administration.operator_group'))]"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_unlink" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -52,7 +52,7 @@
             <field name="name">Tarifas: no crear ni editar</field>
             <field name="model_id" ref="product.model_product_pricelist_item"/>
             <field name="domain_force">[('id','=', 0)]</field>
-            <field name="groups" eval="[(4, ref('fha_administration.comercial_group'))]"/>
+            <field name="groups" eval="[(4, ref('fha_administration.operator_group'))]"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_unlink" eval="True"/>
             <field name="perm_write" eval="True"/>
