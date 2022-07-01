@@ -14,6 +14,7 @@
     'license': 'AGPL-3',
     'data': [
         'security/security_group.xml',
+        'views/purchase_order.xml',
     ],
     'installable': True,
     'auto_install': True,
