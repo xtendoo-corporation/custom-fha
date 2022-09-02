@@ -7,12 +7,6 @@
             <field name="comment">Operators Group </field>
         </record>
         <!-- Fin Grupo de comericiales -->
-         <!-- Grupo de usuario Standard -->
-        <record id="standard_group" model="res.groups">
-            <field name="name">Usuario Estandár</field>
-            <field name="comment">Usuario Estandár Group </field>
-        </record>
-        <!-- Fin Grupo de usuario Standard -->
           <!-- Grupo de Admin -->
 <!--        <record id="admins_group" model="res.groups">-->
 <!--            <field name="name">Administrador</field>-->
@@ -31,18 +25,6 @@
             <field name="perm_read" eval="False"/>
         </record>
 <!--  Fin Regla para que no se puedan crear ni editar clientes a comerciales -->
- <!--  Regla para que no se puedan crear ni editar productos a usuario Standard -->
-        <record id="no_create_no_edit_products" model="ir.rule">
-            <field name="name">Productos: no crear ni editar standard User</field>
-            <field name="model_id" ref="product.model_product_product"/>
-            <field name="domain_force">[('id', '=', '0')]</field>
-            <field name="groups" eval="[(4, ref('fha_administration.standard_group'))]"/>
-            <field name="perm_create" eval="True"/> <!-- no es permitir es aplicar-->
-            <field name="perm_unlink" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_read" eval="False"/>
-        </record>
-<!--  Fin Regla para que no se puedan crear ni editar productos a usuario Standard -->
         <!--  Regla para que no se puedan crear ni editar productos a comerciales -->
         <record id="no_create_no_edit_products" model="ir.rule">
             <field name="name">Productos: no crear ni editar</field>
