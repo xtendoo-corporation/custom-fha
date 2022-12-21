@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_leave_to_event
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-21 09:44+0000\n"
+"PO-Revision-Date: 2022-12-21 09:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__applicant_name
+msgid "Applicant name"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__author
+msgid "Author"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__cost
+msgid "Cost"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__cost_type
+msgid "Cost Type"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:hr.leave.type,name:hr_leave_to_event.event_attendance
+msgid "Event attendance"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__event_date
+msgid "Event date"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__event_name
+msgid "Event name"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__event_place
+msgid "Event place"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__event_type
+msgid "Event type"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__motivation
+msgid "Motivation"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__hr_leave__cost_type__own
+msgid "Own resources"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__project_id
+msgid "Project"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__hr_leave__cost_type__subsidized
+msgid "Subsidized"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model,name:hr_leave_to_event.model_hr_leave
+msgid "Time Off"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__holiday_type_name
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__name
+msgid "Time Off Type"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__tittle
+msgid "Tittle"
+msgstr ""
