@@ -10,6 +10,13 @@
             <xpath expr="//form/sheet/group[1]/field[@name='parent_id']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
+             <xpath expr="//form/sheet/group[1]/field[@name='name']" position="replace">
+                  <field name="name" attrs="{'readonly':[('is_readonly','=', True)]}"/>
+            </xpath>
+            <xpath expr="//form/sheet/group[2]/field[@name='description']" position="replace">
+                  <field name="description" attrs="{'readonly':[('is_readonly','=', True)]}"/>
+            </xpath>
+
 
             <xpath expr="//form/sheet/group[2]" position="after">
                 <field name="is_readonly" invisible="1"/>
