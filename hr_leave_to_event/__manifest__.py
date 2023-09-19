@@ -15,7 +15,9 @@
     'license': 'AGPL-3',
     'data': [
         "views/hr_leave_views.xml",
+        "views/event_event_views.xml",
         "data/hr_leave_type.xml",
+        "security/ir.model.access.csv",
     ],
     'installable': True,
     'auto_install': True,

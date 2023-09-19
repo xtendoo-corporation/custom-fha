@@ -9,25 +9,36 @@
                <field name="holiday_type_name" invisible="1"></field>
                 <div class="row" name="event_data" attrs="{'invisible': [('holiday_type_name', '!=', 'Event attendance')]}">
                     <div class="col-12">
+                        <h2>Detalles de la asistencia al evento</h2>
                         <group>
                             <group>
-                                <field name="applicant_name" required="1"></field>
                                 <field name="event_id" required="1"></field>
-                                <field name="event_type" required="1"></field>
-                                <field name="event_place" required="1"></field>
-                                <field name="event_date" required="1"></field>
+                                <field name="rol" required="1"></field>
+
+<!--                                <field name="grant_agreer" required="1"></field>-->
                             </group>
                             <group>
-                                <field name="project_id" required="1"></field>
-                                <field name="tittle" required="1"></field>
-                                <field name="author" required="1"></field>
-                                <field name="cost"></field>
-                                <field name="cost_type" required="1"></field>
+                                 <field name="project_id" required="1"></field>
+                                 <field name="cost" required="1"></field>
+                                 <field name="grant_agreer" required="1"></field>
                             </group>
                         </group>
-                        <group>
-                            <field name="motivation"/>
-                        </group>
+<!--                        <group>-->
+<!--                            <h2>Datos despues del evento</h2>-->
+<!--                            <group>-->
+<!--                                <field name="assistence_number"></field>-->
+<!--                                <field name="public_type"></field>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="assistence_description" nolabel="1" placeholder="Breve descripción de su experiencia en el evento."></field>-->
+<!--                            </group>-->
+
+
+<!--                        </group>-->
+
+<!--                        <group>-->
+<!--                            <field name="motivation"/>-->
+<!--                        </group>-->
                     </div>
                 </div>
             </xpath>
