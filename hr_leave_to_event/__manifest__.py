@@ -18,6 +18,7 @@
         "views/event_event_views.xml",
         "data/hr_leave_type.xml",
         "security/ir.model.access.csv",
+        "data/mail_template.xml",
     ],
     'installable': True,
     'auto_install': True,

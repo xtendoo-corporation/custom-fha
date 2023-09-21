@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="event_attendance" model="hr.leave.type">
-            <field name="name">Event attendance</field>
+            <field name="name">Participar en evento</field>
             <field name="allocation_type">no</field>
             <field name="validation_type">both</field>
             <field name="request_unit">day</field>

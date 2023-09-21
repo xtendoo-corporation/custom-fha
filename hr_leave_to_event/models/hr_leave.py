@@ -6,7 +6,6 @@ from odoo import api, fields, models
 
 class StockPicking(models.Model):
     _inherit = "hr.leave"
-
     holiday_type_name = fields.Char(related="holiday_status_id.name")
     name = fields.Char('Time Off Type', required=True, translate=True)
     event_id = fields.Many2one('event.event', 'Evento', store=True, readonly=False)
