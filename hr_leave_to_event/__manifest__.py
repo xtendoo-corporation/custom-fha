@@ -19,6 +19,8 @@
         "data/hr_leave_type.xml",
         "security/ir.model.access.csv",
         "data/mail_template.xml",
+        "data/crondata.xml",
+        "security/security_group.xml",
     ],
     'installable': True,
     'auto_install': True,

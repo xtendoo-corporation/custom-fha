@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="event.view_event_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='user_id']" position="replace">
-                <field name="user_id" string="Participante"/>
+                <field name="user_id" string="Participante" />
             </xpath>
             <xpath expr="//label[@for='date_begin']" position="replace">
                 <label for="date_begin" string="Duración de Evento"/>
@@ -46,8 +46,6 @@
             <xpath expr="//notebook/page[@name='event_communication']" position="after">
                  <page string="Media" name="media" attrs="{'invisible': [('state', '!=', 'done')]}">
                             <group>
-                                <!--<field name="lot_img" widget='image' />-->
-
                                     <field
                                         name="image_ids"
                                         context="{'name': name}"
@@ -55,8 +53,6 @@
                                         options="{'create_text':'Add a Media'}"
                                         nolabel="1"
                                     />
-
-
                             </group>
                         </page>
             </xpath>
@@ -104,12 +100,10 @@
                                     </small>
                                 </h4>
                             </div>
-                            <!-- below 100 Kb: good -->
                             <t t-if="record.image_1920.raw_value.length &lt; 100*1000">
                                 <t t-set="size_status" t-value="'badge-success'"/>
                                 <t t-set="message">Acceptable file size</t>
                             </t>
-                            <!-- below 1000 Kb: decent -->
                             <t
                                 t-elif="record.image_1920.raw_value.length &lt; 1000*1000"
                             >
@@ -119,7 +113,6 @@
                                 >Huge file size. The image should be optimized/reduced.
                                 </t>
                             </t>
-                            <!-- above 1000 Kb: bad -->
                             <t t-else="1">
                                 <t t-set="size_status" t-value="'badge-danger'"/>
                                 <t
