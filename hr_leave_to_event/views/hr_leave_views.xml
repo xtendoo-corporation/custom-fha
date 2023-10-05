@@ -45,4 +45,13 @@
             </xpath>
         </field>
     </record>
+    <record id="hr_holidays_filter_inherit_all" model="ir.ui.view">
+        <field name="name">hr.holidays.filter.inherit.all</field>
+        <field name="model">hr.leave.report.calendar</field>
+        <field name="arch" type="xml">
+           <search string="Search Time Off">
+               <filter string="Asistencia a Eventos" name="asistencia_evento" domain="[('leave_name', '=', 'Participar en evento')]"/>
+            </search>
+        </field>
+    </record>
 </odoo>
