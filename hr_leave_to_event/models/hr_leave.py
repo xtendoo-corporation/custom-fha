@@ -4,9 +4,9 @@
 from odoo import api, fields, models
 
 
-class HolidaysRequest(models.Model):
+class StockPicking(models.Model):
     _inherit = "hr.leave"
-    holiday_type_name = fields.Char(related="holiday_status_id.name", store=True)
+    holiday_type_name = fields.Char(related="holiday_status_id.name")
     name = fields.Char('Time Off Type', required=True, translate=True)
     event_id = fields.Many2one('event.event', 'Evento', store=True, readonly=False)
     rol = fields.Selection([('oyente', 'Oyente'), ('speaker', 'Speaker'), ('moderador', 'Moderador')], string='Rol', required=True, default='oyente')
