@@ -8,6 +8,12 @@
             <xpath expr="//button[@name='button_confirm']" position="attributes">
                 <attribute name="groups">hr_leave_to_event.communication_group, event.group_event_manager</attribute>
             </xpath>
+             <xpath expr="//button[@name='button_done']" position="attributes">
+                <attribute name="groups">hr_leave_to_event.communication_group, event.group_event_manager</attribute>
+            </xpath>
+             <xpath expr="//button[@name='button_cancel']" position="attributes">
+                <attribute name="groups">hr_leave_to_event.communication_group, event.group_event_manager</attribute>
+            </xpath>
 
             <xpath expr="//field[@name='user_id']" position="replace">
                 <field name="user_id" string="Participante" />
