@@ -17,6 +17,8 @@
 
             <xpath expr="//field[@name='user_id']" position="replace">
                 <field name="user_id" string="Participante" />
+                <field name="rol" required="1"></field>
+                <field name="description" rowspan="3" placeholder="Descripción..."></field>
             </xpath>
             <xpath expr="//label[@for='date_begin']" position="replace">
                 <label for="date_begin" string="Duración de Evento"/>

@@ -7,10 +7,12 @@ from jinja2 import Template
 
 class EventEvent(models.Model):
     _inherit = "event.event"
-
+    description = fields.Text(string="Descripcíon de la experiencia", store=True)
     website = fields.Char(string="Sitio Web", store=True)
     organization_contact = fields.Char(string="Persona de contacto", store=True)
-
+    rol = fields.Selection([('oyente', 'Oyente'), ('speaker', 'Speaker'), ('moderador', 'Moderador')], string='Rol',
+                           required=True, default='oyente')
+    name = fields.Char('Description')
     assistence_number = fields.Integer(string="Número de asistentes")
     public_type = fields.Selection([
         ('profesionales', 'Profesionales'),
