@@ -14,6 +14,16 @@
              <xpath expr="//button[@name='button_cancel']" position="attributes">
                 <attribute name="groups">hr_leave_to_event.communication_group, event.group_event_manager</attribute>
             </xpath>
+             <xpath expr="//field[@name='organizer_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='address_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="organizer" required="1"></field>
+                <field name="address" required="1"></field>
+            </xpath>
 
             <xpath expr="//field[@name='user_id']" position="replace">
                 <field name="user_id" string="Participante" />

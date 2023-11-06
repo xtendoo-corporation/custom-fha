@@ -9,6 +9,8 @@ class EventEvent(models.Model):
     _inherit = "event.event"
     description = fields.Text(string="Descripcíon de la experiencia", store=True)
     website = fields.Char(string="Sitio Web", store=True)
+    organizer = fields.Char(string="Organizador", store=True)
+    address = fields.Char(string="Ubicación", store=True)
     organization_contact = fields.Char(string="Persona de contacto", store=True)
     rol = fields.Selection([('oyente', 'Oyente'), ('speaker', 'Speaker'), ('moderador', 'Moderador')], string='Rol',
                            required=True, default='oyente')
