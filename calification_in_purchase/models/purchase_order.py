@@ -5,7 +5,7 @@ from odoo import api, fields, models
 from jinja2 import Template
 
 
-class EventEvent(models.Model):
+class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     calification = fields.Selection(

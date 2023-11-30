@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="partner_calification_view" model="ir.ui.view">
+        <field name="name">partner.calification.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                    <field name="show_calification" class="oe_inline" invisible="1"/>
+                    <div style="display: inline-block; margin-right: 10px;" attrs="{'invisible': [('show_calification', '=', False)]}" >
+                       <b>
+                            <label for="calification" class="oe_inline"/>
+                       </b>
+                    </div>
+                    <div style="display: inline-block; font-style:bolder;" attrs="{'invisible': [('show_calification', '=', False)]}">
+                        <field name="calification" class="oe_inline" widget="priority" nolabel="1"/>
+                        <span>
+                             ( <field name="calification_number" class="oe_inline"/>/5 )
+                        </span>
+                    </div>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>
