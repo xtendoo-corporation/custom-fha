@@ -1,7 +1,7 @@
 {
     'name': 'Calificacion en compras',
     'summary': """Calificacion en compras""",
-    'version': '13.0.1.0.0',
+    'version': '14.0.1.0.0',
     'description': """Calificacion en compras""",
     'author': 'Dani Domínguez',
     'company': 'Xtendoo',
@@ -9,6 +9,7 @@
     'category': 'Purchase',
     'depends': [
         'purchase',
+        'contacts',
     ],
     'license': 'AGPL-3',
     'data': [
