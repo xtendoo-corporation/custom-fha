@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="purchase_order_create_invoice_button" model="ir.ui.view">
+        <field name="name">purchase.order.create.invoice.button</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_invoice'][1]" position="replace">
+                <button name="action_view_invoice"
+                        string="Crear Factura"
+                        type="object"
+                        class="oe_highlight"
+                        context="{'create_bill':True}"
+                        attrs="{'invisible': ['|', ('state', 'not in', ('purchase', 'done')), ('invoice_status', 'in', ('no', 'invoiced'))]}"
+                        groups="purchase.group_purchase_manager"
+                />
+            </xpath>
+            <xpath expr="//button[@name='action_create_invoice'][2]" position="replace">
+                <button name="action_view_invoice"
+                        string="Create Bill"
+                        type="object"
+                        context="{'create_bill':True}"
+                        attrs="{'invisible': ['|', '|', ('state', 'not in', ('purchase', 'done')), ('invoice_status', 'not in', ('no', 'invoiced')), ('order_line', '=', [])]}"
+                        groups="purchase.group_purchase_manager"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
