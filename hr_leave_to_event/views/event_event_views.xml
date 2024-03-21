@@ -5,71 +5,41 @@
         <field name="model">event.event</field>
         <field name="inherit_id" ref="event.view_event_form"/>
         <field name="arch" type="xml">
-<!--            <xpath expr="//button[@name='button_confirm']" position="attributes">-->
-<!--                <attribute name="groups">hr_leave_to_event.communication_group, event.group_event_manager</attribute>-->
-<!--            </xpath>-->
-<!--             <xpath expr="//button[@name='button_done']" position="attributes">-->
-<!--                <attribute name="groups">hr_leave_to_event.communication_group, event.group_event_manager</attribute>-->
-<!--            </xpath>-->
-<!--             <xpath expr="//button[@name='button_cancel']" position="attributes">-->
-<!--                <attribute name="groups">hr_leave_to_event.communication_group, event.group_event_manager</attribute>-->
-<!--            </xpath>-->
+             <xpath expr="//field[@name='user_id']" position="replace">
+            </xpath>
+             <xpath expr="//label[@for='date_begin']" position="before">
+                <field name="organizer" required="1"></field>
+                 <field name="address" required="1"></field>
+                 <field name="user_id" string="Participante" />
+                 <field name="organization_contact" ></field>
+                  <field name="rol" required="1"></field>
+                <field name="description"  string="Descripción" rowspan="3" placeholder="Descripción del evento..."></field>
+            </xpath>
+             <xpath expr="//field[@name='event_type_id']" position="attributes">
+                 <attribute name="invisible">1</attribute>
+             </xpath>
+            <xpath expr="//field[@name='tag_ids']" position="attributes">
+                 <attribute name="invisible">1</attribute>
+             </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                  <field name="website" widget="url" string="Sitio Web"></field>
+                 <field name="assistence_number" attrs="{'invisible': [('stage_id', '!=', 4)]}"></field>
+                <field name="public_type" attrs="{'invisible': [('stage_id', '!=', 4)]}"></field>
+                <field name="assistence_description" rowspan="3" placeholder="Breve descripción de su experiencia en el evento." attrs="{'invisible': [('stage_id', '!=', 4)]}"></field>
+             </xpath>
              <xpath expr="//field[@name='organizer_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
             <xpath expr="//field[@name='address_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath expr="//field[@name='user_id']" position="before">
-                <field name="organizer" required="1"></field>
-                <field name="address" required="1"></field>
-            </xpath>
-
-            <xpath expr="//field[@name='user_id']" position="replace">
-                <field name="user_id" string="Participante" />
-                <field name="rol" required="1"></field>
-                <field name="description" rowspan="3" placeholder="Descripción..."></field>
-            </xpath>
             <xpath expr="//label[@for='date_begin']" position="replace">
                 <label for="date_begin" string="Duración de Evento"/>
             </xpath>
-<!--            <xpath expr="//group/label[@for='twitter_hashtag']" position="replace">-->
-<!--                <label for="website" class="oe_inline">Página web</label>-->
-<!--            </xpath>-->
-            <xpath expr="//field[@name='user_id']" position="after">
-                <field name="organization_contact" ></field>
-            </xpath>
-<!--            <xpath expr="//group/div/span[@class='oe_inline']" position="replace">-->
-<!--            </xpath>-->
-<!--            <xpath expr="//group/div/field[@name='twitter_hashtag']" position="replace">-->
-<!--                <field name="website" widget="url" string="Sitio Web"></field>-->
-<!--            </xpath>-->
             <xpath expr="//field[@name='auto_confirm']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath expr="//field[@name='auto_confirm']" position="after">
-<!--                <field name="assistence_number" attrs="{'invisible': [('state', '!=', 'done')]}"></field>-->
-                <field name="assistence_number"></field>
-<!--                <field name="public_type" attrs="{'invisible': [('state', '!=', 'done')]}"></field>-->
-                <field name="public_type" ></field>
-<!--                <field name="assistence_description" rowspan="3" placeholder="Breve descripción de su experiencia en el evento." attrs="{'invisible': [('state', '!=', 'done')]}"></field>-->
-                <field name="assistence_description" rowspan="3" placeholder="Breve descripción de su experiencia en el evento."></field>
-
-            </xpath>
-<!--            <xpath expr="//field[@name='seats_min']" position="attributes">-->
-<!--                <attribute name="invisible">1</attribute>-->
-<!--            </xpath>-->
-<!--            <xpath expr="//label[@for='seats_availability']" position="attributes">-->
-<!--                <attribute name="invisible">1</attribute>-->
-<!--            </xpath>-->
-<!--            <xpath expr="//field[@name='seats_availability']" position="attributes">-->
-<!--                <attribute name="invisible">1</attribute>-->
-<!--            </xpath>-->
-<!--            <xpath expr="//field[@name='is_online']" position="attributes">-->
-<!--                <attribute name="invisible">1</attribute>-->
-<!--            </xpath>-->
             <xpath expr="//notebook/page[@name='event_communication']" position="after">
-<!--                 <page string="Media" name="media" attrs="{'invisible': [('state', '!=', 'done')]}">-->
                  <page string="Media" name="media">
                             <group>
                                     <field

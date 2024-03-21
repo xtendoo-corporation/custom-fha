@@ -48,7 +48,8 @@ class EventEvent(models.Model):
         default=lambda self: self.env.user,
         domain=lambda self: self.compute_user_id_domain(),
         tracking=True,
-        readonly=False, states={'done': [('readonly', True)]})
+        readonly=False,
+    )
 
     def button_done(self):
         self.write({'state': 'done'})
