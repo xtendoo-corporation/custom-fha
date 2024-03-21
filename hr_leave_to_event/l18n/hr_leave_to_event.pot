@@ -1,0 +1,272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_leave_to_event
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-19 12:43+0000\n"
+"PO-Revision-Date: 2023-09-19 12:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.hr_leave_event_view_form
+msgid "<b>Tipo de ausencia</b>"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.event_image_view_kanban
+msgid "Acceptable file size"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.event_event_view_form
+msgid "Breve descripción de su experiencia en el evento."
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__event_event__public_type__comunidad_cientifica
+msgid "Comunidad Científica"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__cost_type
+msgid "Cost Type"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__cost
+msgid "Coste"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__dms_directory_ids
+msgid "DMS Directories"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_event__assistence_description
+msgid "Descripcíon de la experiencia"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.hr_leave_event_view_form
+msgid "Detalles de la asistencia al evento"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__event_event__public_type__directivos
+msgid "Directivos"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model,name:hr_leave_to_event.model_event_event
+msgid "Event"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model,name:hr_leave_to_event.model_event_image
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.event_image_view_kanban
+msgid "Event Images"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:hr.leave.type,name:hr_leave_to_event.event_attendance
+msgid "Event attendance"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__event_id
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__event_id
+msgid "Evento"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__event_event__public_type__gran_empresa
+msgid "Gran empresa"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.event_image_view_kanban
+msgid "Huge file size. The image should be optimized/reduced."
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__id
+msgid "ID"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__image_1920
+msgid "Imagen"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.view_event_image_form
+msgid "Imagen de Evento"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_event__image_ids
+msgid "Imágenes del Evento"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__event_event__public_type__instituciones
+msgid "Instituciones"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__grant_agreer
+msgid "Mandatorio por Grant Agreer"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.event_event_view_form
+msgid "Media"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__hr_leave__rol__moderador
+msgid "Moderador"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__name
+msgid "Nombre"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_event__assistence_number
+msgid "Número de asistentes"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.event_image_view_kanban
+msgid ""
+"Optimization required! Reduce the image size or increase your compression "
+"settings."
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__hr_leave__cost_type__own
+msgid "Own resources"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__hr_leave__rol__oyente
+msgid "Oyente"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_event__organization_contact
+msgid "Persona de contacto"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__event_event__public_type__profesionales
+msgid "Profesionales"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__project_id
+msgid "Proyecto"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__event_event__public_type__pymes_max_100
+msgid "Pymes de hasta 100 trabajadores"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__event_event__public_type__pymes_max_50
+msgid "Pymes de hasta 50 trabajadores"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.event_event_view_form
+msgid "Página web"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__rol
+msgid "Rol"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_image__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_event__website
+#: model_terms:ir.ui.view,arch_db:hr_leave_to_event.event_event_view_form
+msgid "Sitio Web"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__event_event__public_type__sociedad_civil
+msgid "Sociedad civil"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__hr_leave__rol__speaker
+msgid "Speaker"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields.selection,name:hr_leave_to_event.selection__hr_leave__cost_type__subsidized
+msgid "Subsidized"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model,name:hr_leave_to_event.model_hr_leave
+msgid "Time Off"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__holiday_type_name
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_hr_leave__name
+msgid "Time Off Type"
+msgstr ""
+
+#. module: hr_leave_to_event
+#: model:ir.model.fields,field_description:hr_leave_to_event.field_event_event__public_type
+msgid "Tipo de público"
+msgstr ""

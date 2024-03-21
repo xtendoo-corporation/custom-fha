@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Grupo de Comunicación -->
+        <record id="communication_group" model="res.groups">
+            <field name="name">Comunicación</field>
+            <field name="comment">Grupo de Comunicación </field>
+        </record>
+        <!-- Fin Grupo de Comunicación -->
+     <!--  Regla para para solo ver eventos propios -->
+        <record id="only_own_events" model="ir.rule">
+            <field name="name">Solo eventos propios </field>
+            <field name="model_id" ref="event.model_event_event"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('event.group_event_user'))]"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+<!--  Fin Regla para solo ver eventos propios-->
+        <!--  Regla para ver todos los eventos -->
+        <record id="all_events" model="ir.rule">
+            <field name="name">Todos los eventos </field>
+            <field name="model_id" ref="event.model_event_event"/>
+            <field name="domain_force">[('user_id', '!=', 'XXX')]</field>
+            <field name="groups" eval="[(4, ref('hr_leave_to_event.communication_group'))]"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+<!--  Fin Regla para egla para ver todos los eventos -->
+    </data>
+</odoo>
