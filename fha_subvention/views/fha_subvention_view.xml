@@ -1,0 +1,97 @@
+<odoo>
+    <!-- Actions -->
+    <record id="action_see_subventions" model="ir.actions.act_window">
+        <field name="name">Subventions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.analytic.group</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="domain">[('is_subvention', '=', True)]</field>
+        <field name="context">{'default_is_subvention': True}</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new Subvention
+          </p>
+        </field>
+    </record>
+
+    <record id="open_wizard" model="ir.actions.act_window">
+            <field name="name">Timesheets Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.analytic.line.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account_analytic_line_report_wizard_form"/>
+            <field name="target">new</field>
+    </record>
+
+    <!-- Fin Actions -->
+    <record id="fha_subvention.fha_subvention_account_analytic_account_view_tree" model="ir.ui.view">
+        <field name="name">fha.subvention.account.analytic.account.view.tree</field>
+        <field name="model">account.analytic.account</field>
+        <field name="arch" type="xml">
+            <tree string="Subventions Expenses">
+                <field name="currency_id" invisible="1"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="debit" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="credit" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="balance" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fha_subvention.fha_subvention_account_analytic_account_view_filter" model="ir.ui.view">
+        <field name="name">fha.subvention.account.analytic.account.view.filter</field>
+        <field name="model">account.analytic.account</field>
+        <field name="arch" type="xml">
+            <search string="Analytic Account">
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('code', 'ilike', self)]"
+                       string="Analytic Account"/>
+                <field name="partner_id"/>
+                <separator/>
+                <filter string="Archived" domain="[('active', '=', False)]" name="inactive"/>
+                <group expand="0" string="Group By...">
+                    <filter string="Associated Partner" name="associatedpartner" domain="[]"
+                            context="{'group_by': 'partner_id'}"/>
+                    <filter string="Group" name="group" domain="[]" context="{'group_by': 'group_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="fha_subvention.fha_subvention_view_filter" model="ir.ui.view">
+        <field name="name">fha.subvention.view.filter</field>
+        <field name="model">account.analytic.group</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <search string="Search Subvention">
+                <filter string="Date Init" name="filter_create_date" date="date_init"/>
+                <filter string="Date End" name="filter_create_date" date="date_end"/>
+                <group expand="0" string="Group By">
+                    <filter string="Entity" name="partner_id" context="{'group_by': 'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <menuitem name="Subventions"
+              id="fha_subvention_menu"
+              sequence="1"
+              web_icon="fha_subvention,static/description/icon.png"
+              groups="fha_subvention.group_fha_user_subvention">
+        <menuitem id="cat_menu_lims_maker"
+                  name="Subventions"
+                  sequence="10"
+                  action="action_see_subventions"
+                  groups="fha_subvention.group_fha_user_subvention"/>
+        <menuitem id="fha_subvention_menu_timesheet"
+                  name="Timesheet"
+                  action="fha_timesheet_action"
+                  sequence="20"
+                  groups="fha_subvention.group_fha_user_subvention"/>
+        <menuitem id="fha_subvention_menu_report"
+                  name="Report"
+                  sequence="30"
+                  action="open_wizard"
+                  groups="fha_subvention.group_fha_user_subvention"/>
+    </menuitem>
+
+</odoo>

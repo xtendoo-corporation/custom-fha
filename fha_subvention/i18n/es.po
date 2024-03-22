@@ -1,0 +1,672 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fha_subvention
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-18 10:07+0000\n"
+"PO-Revision-Date: 2021-11-18 10:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fha_subvention
+#: model:ir.actions.report,print_report_name:fha_subvention.action_account_analytic_line_report_pdf
+msgid "'Subvention Report'"
+msgstr "'Informe Subvenciones'"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "<span>Percentage : </span>"
+msgstr "<span>Porcentaje : </span>"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "<span>Percentage Justified : </span>"
+msgstr "<span>Percentage Justificado : </span>"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "<span>Total Justified : </span>"
+msgstr "<span>Total Justificado : </span>"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "<span>Total Subvention : </span>"
+msgstr "<span>Subvención Total : </span>"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line__abs_amount
+msgid "Absolute Amount"
+msgstr "Importe"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__account_id
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__account_id
+msgid "Account"
+msgstr "Contabilidad"
+
+#. module: fha_subvention
+#: code:addons/fha_subvention/models/account_analytic_account.py:0
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_group_form_view
+#: model_terms:ir.ui.view,arch_db:fha_subvention.view_account_analytic_line
+#, python-format
+msgid "Account Analytic Line"
+msgstr "Linea de Cuenta Analitica"
+
+#. module: fha_subvention
+#: model:ir.model,name:fha_subvention.model_account_analytic_line_report_wizard
+msgid "Account Analytic Line Report Wizard"
+msgstr "Asistente Línea Analítica Contable Informe"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__account_move_line_id
+msgid "Account Move Line"
+msgstr "Línea de movimiento"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__account_analytic_line_ids
+msgid "Account analytic line"
+msgstr "Línea analítica"
+
+#. module: fha_subvention
+#: model:res.groups,name:fha_subvention.group_fha_administrator_subvention
+msgid "Administrator"
+msgstr "Administrador"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: fha_subvention
+#: model:ir.model,name:fha_subvention.model_account_analytic_account
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_account_analytic_account_view_filter
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: fha_subvention
+#: model:ir.model,name:fha_subvention.model_account_analytic_group
+msgid "Analytic Categories"
+msgstr "Categorías Analíticas"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__analytic_group_id
+msgid "Analytic Group"
+msgstr "Grupo Analitico"
+
+#. module: fha_subvention
+#: model:ir.model,name:fha_subvention.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea Analítica"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__annual_spend
+msgid "Annual Spend"
+msgstr "Gasto Anual"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_account_analytic_account_view_filter
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_account_analytic_account_view_filter
+msgid "Associated Partner"
+msgstr "Cliente Asociado"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_wizard
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_group__code
+msgid "Code of subvention."
+msgstr "Código de subvención"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__complete_name
+#: model_terms:ir.ui.view,arch_db:fha_subvention.view_account_analytic_account_list
+msgid "Complete Name"
+msgstr "Nombre Completo"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.view_account_analytic_line
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__create_uid
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__create_uid
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__create_date
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__create_date
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__currency_id
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__currency_id
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__date
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_header
+msgid "Date"
+msgstr "Fecha"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_view_filter
+msgid "Date End"
+msgstr "Fecha Fin"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__date_from
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_filters
+msgid "Date From"
+msgstr "Desde Fecha"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_view_filter
+msgid "Date Init"
+msgstr "Fecha Inicio"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__date_to
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_filters
+msgid "Date To"
+msgstr "Hasta Fecha"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.view_account_analytic_line
+msgid "Discard"
+msgstr "Descartar"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__display_name
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__display_name
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__date_end
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__date_to
+msgid "End Date"
+msgstr "Fecha Fin"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__partner_id
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_view_filter
+msgid "Entity"
+msgstr "Entidad"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__account_id
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_group_form_view
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "Expense Type"
+msgstr "Tipo Gasto"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.view_account_analytic_line
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_wizard
+msgid "Export PDF"
+msgstr "Exprtar PDF"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "Fecha"
+msgstr ""
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_account_analytic_account_view_filter
+msgid "Group"
+msgstr "Grupo"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_view_filter
+msgid "Group By"
+msgstr "Grupo Por"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_account_analytic_account_view_filter
+msgid "Group By..."
+msgstr "Grupo Por..."
+
+#. module: fha_subvention
+#: model:ir.module.category,description:fha_subvention.module_category_subvention
+msgid "Helps you handle your subventions."
+msgstr "Ayuda al manejo de subvenciones"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__id
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__id
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__id
+msgid "ID"
+msgstr ""
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__date_init
+msgid "Init Date"
+msgstr "Fecha Inicio"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line__move_move_id
+msgid "Invoice Number"
+msgstr "Número Factura"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__is_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__is_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line__is_subvention
+msgid "Is Subvention"
+msgstr "Subvención"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_group_form_view
+msgid "Items"
+msgstr "Partidas"
+
+#. module: fha_subvention
+#: model:ir.model,name:fha_subvention.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: fha_subvention
+#: model:ir.model,name:fha_subvention.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line__justified_amount
+msgid "Justified Amount"
+msgstr "Importe Justificado"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__justified_subvention
+msgid "Justified Subvention"
+msgstr "Justificado"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.internal_layout
+msgid "Justified Subvention :"
+msgstr "Subvención Justificada :"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report____last_update
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard____last_update
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación en"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__write_uid
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__write_uid
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__write_date
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__write_date
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__move_id
+msgid "Move"
+msgstr "Apunte"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_view__name
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_header
+msgid "Name"
+msgstr "Nombre"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "Nombre"
+msgstr ""
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__percentage
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__percentage
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line__justified_percentage
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_group_form_view
+#: model_terms:ir.ui.view,arch_db:fha_subvention.view_account_analytic_account_form
+#: model_terms:ir.ui.view,arch_db:fha_subvention.view_account_analytic_line
+msgid "Percentage %"
+msgstr "Porcentaje %"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__percentage_expense
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "Percentage expense"
+msgstr "Porcentaje de gasto"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_account__percentage_expense
+msgid "Percentage of expense in this item"
+msgstr "Porcentaje de gasto en esta partida"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.internal_layout
+msgid "Period :"
+msgstr "Periodo :"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__project_id
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__is_readonly
+msgid "Read Only"
+msgstr "Solo Lectura"
+
+#. module: fha_subvention
+#: model_terms:ir.actions.act_window,help:fha_subvention.fha_timesheet_action
+msgid "Record a new activity"
+msgstr "Grabar una nueva actividad"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: fha_subvention
+#: model:ir.ui.menu,name:fha_subvention.fha_subvention_menu_report
+msgid "Report"
+msgstr "Informe"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report__results
+msgid "Results"
+msgstr "Resultados"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_view_filter
+msgid "Search Subvention"
+msgstr "Buscar Subvenciones"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__date_from
+msgid "Start Date"
+msgstr "Fecha Inicio"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__annual_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_group_form_view
+msgid "Subsidized"
+msgstr "Subvencionado"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line__account_id
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line_report_wizard__analytic_group_id
+#: model_terms:ir.ui.view,arch_db:fha_subvention.hr_timesheet_line_subvention_tree
+msgid "Subvention"
+msgstr "Subvención"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__code
+msgid "Subvention Code"
+msgstr "Código Subvención"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_line__subvention
+msgid "Subvention Deprecated"
+msgstr "Subvención Obsoleto"
+
+#. module: fha_subvention
+#: model:ir.model,name:fha_subvention.model_account_analytic_line_report
+msgid "Subvention Report"
+msgstr "Informe de Subvención"
+
+#. module: fha_subvention
+#: model:ir.model,name:fha_subvention.model_account_analytic_line_view
+msgid "Subvention View"
+msgstr "Vista de Subvenciones"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__account_analytic_account_ids
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__account_analytic_account_ids
+msgid "Subvention items"
+msgstr "Partidas de Subvención"
+
+#. module: fha_subvention
+#: model:ir.actions.act_window,name:fha_subvention.fha_subvention_action
+#: model:ir.module.category,name:fha_subvention.module_category_subvention
+#: model:ir.ui.menu,name:fha_subvention.fha_subvention_menu
+#: model:ir.ui.menu,name:fha_subvention.fha_subvention_menu_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_view_tree
+msgid "Subventions"
+msgstr "Subvenciones"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.fha_subvention_account_analytic_account_view_tree
+msgid "Subventions Expenses"
+msgstr "Gastos Subvenciones"
+
+#. module: fha_subvention
+#: model:ir.actions.report,name:fha_subvention.action_account_analytic_line_report_pdf
+msgid "Subventions PDF"
+msgstr "Subvenciones PDF"
+
+#. module: fha_subvention
+#: model:ir.actions.client,name:fha_subvention.action_account_analytic_line_report_html
+msgid "Subventions Report"
+msgstr "Informe de Subvenciones"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.internal_layout
+msgid "Subventions Reports"
+msgstr "Informes de Subvenciones"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.timesheet_view_search
+msgid "Subventions not set"
+msgstr "Subvención no establecida"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_group__annual_spend
+msgid "The annual spend."
+msgstr "Gasto Anual"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_group__annual_subvention
+msgid "The annual subvention."
+msgstr "La subvencion anual"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_line__justified_amount
+msgid "The justified amount."
+msgstr "La cantidad justifiacada"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_group__justified_subvention
+msgid "The justified subvention."
+msgstr "La subvención justifiacada"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_line__move_move_id
+msgid "The move of this entry line."
+msgstr ""
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_account__percentage
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_line__justified_percentage
+msgid "The percentage of subvention concept."
+msgstr "El porcentaje de concepto de subvención"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_group__percentage
+msgid "The percentage of subvention."
+msgstr "El porcentaje de subvención"
+
+#. module: fha_subvention
+#: code:addons/fha_subvention/models/account_analytic_account.py:0
+#, python-format
+msgid "The percentage of the %s, must be greater than one."
+msgstr "El porcentage de %s, debe de ser mayor de 1."
+
+#. module: fha_subvention
+#: code:addons/fha_subvention/models/account_analytic_account.py:0
+#, python-format
+msgid "The percentage of the %s, must be not over 100."
+msgstr "El porcentaje de %s, no debe ser mayor que 100."
+
+#. module: fha_subvention
+#: code:addons/fha_subvention/models/account_analytic_group.py:0
+#, python-format
+msgid "The percentage of the subvention must be greater than one."
+msgstr "El porcentage de la subvención debe de ser mayor de 1."
+
+#. module: fha_subvention
+#: code:addons/fha_subvention/models/account_analytic_group.py:0
+#, python-format
+msgid "The percentage of the subvention must be not over 100."
+msgstr "El porcentaje de la subvención, no debe ser mayor que 100."
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_account__total_subvention
+msgid "The total subvention concept."
+msgstr "El concepto total de la subvención"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_group__total_subvention
+msgid "The total subvention."
+msgstr "El total de subvención"
+
+#. module: fha_subvention
+#: model:ir.ui.menu,name:fha_subvention.fha_subvention_menu_timesheet
+msgid "Timesheet"
+msgstr "Parte de hora"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.hr_timesheet_line_subvention_tree
+msgid "Timesheet Activities"
+msgstr "Parte de horas Actividades"
+
+#. module: fha_subvention
+#: model:ir.actions.act_window,name:fha_subvention.fha_timesheet_action
+msgid "Timesheets"
+msgstr "Parte de horas"
+
+#. module: fha_subvention
+#: model:ir.actions.act_window,name:fha_subvention.action_account_analytic_line_report_wizard
+msgid "Timesheets Report"
+msgstr "Parte de horas Informe"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_wizard
+msgid "Timesheets Report Options"
+msgstr "Parte de horas Opciones de Informe"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_group_form_view
+#: model_terms:ir.ui.view,arch_db:fha_subvention.hr_timesheet_line_subvention_tree
+msgid "Total"
+msgstr ""
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "Total Expense"
+msgstr "Total Gasto"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__total_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_group__total_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.account_analytic_line_report_base
+msgid "Total Subvention"
+msgstr "Total Subvención"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.internal_layout
+msgid "Total Subvention :"
+msgstr "Total Subvención :"
+
+#. module: fha_subvention
+#: model:ir.model.fields,field_description:fha_subvention.field_account_analytic_account__total_expense
+msgid "Total expense"
+msgstr "Gasto total"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_account__total_expense
+msgid "Total expense in this item"
+msgstr "Gasto total en esta partida"
+
+#. module: fha_subvention
+#: model:ir.model.fields,help:fha_subvention.field_account_analytic_line_report__results
+msgid "Use compute fields, so there is nothing store in database"
+msgstr ""
+
+#. module: fha_subvention
+#: model:res.groups,name:fha_subvention.group_fha_user_subvention
+msgid "User"
+msgstr "Usuario"
+
+#. module: fha_subvention
+#: model_terms:ir.actions.act_window,help:fha_subvention.fha_timesheet_action
+msgid ""
+"You can register and track your workings hours by project every\n"
+"                day. Every time spent on a project will become a cost and can be re-invoiced to\n"
+"                customers if required."
+msgstr ""
+"Puede registrar y seguir sus horas de trabajo por cada día del proyecto\n"
+"Cada vez que emplea horas en un proyecto, se creará un coste que puede ser facturado al cliente si es necesario."
+
+#. module: fha_subvention
+#: code:addons/fha_subvention/models/account_move.py:0
+#, python-format
+msgid ""
+"You cannot validate a bill the line '%s' exceeds the limit of the item."
+msgstr ""
+"No puede validar la línea de una factura '%s' que excede el límite de la "
+"partida subvencionable"
+
+#. module: fha_subvention
+#: code:addons/fha_subvention/models/account_analytic_group.py:0
+#, python-format
+msgid "You have not permission to create Subventions"
+msgstr "No tiene permiso para crear subvenciones"
+
+#. module: fha_subvention
+#: model:res.groups,comment:fha_subvention.group_fha_administrator_subvention
+msgid "the user will have access to create, update and delete subventions."
+msgstr "El usuario tiene acceso a crear, modificar y borrar subvenciones"
+
+#. module: fha_subvention
+#: model:res.groups,comment:fha_subvention.group_fha_user_subvention
+msgid "the user will have access to subventions."
+msgstr "El usuario tiene acceso a las subvenciones"
+
+#. module: fha_subvention
+#: model_terms:ir.ui.view,arch_db:fha_subvention.internal_layout
+msgid "to"
+msgstr "hasta"
