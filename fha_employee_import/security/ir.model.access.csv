@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_timesheet_cost_import_manager,access_employee_timesheet_cost_import,model_employee_timesheet_cost_import,hr.group_hr_manager,1,1,1,1
+
