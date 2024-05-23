@@ -1,7 +1,7 @@
 {
     'name': 'Calificacion en compras',
     'summary': """Calificacion en compras""",
-    'version': '14.0.1.0.0',
+    'version': '15.0.1.0.0',
     'description': """Calificacion en compras""",
     'author': 'Dani Domínguez',
     'company': 'Xtendoo',
