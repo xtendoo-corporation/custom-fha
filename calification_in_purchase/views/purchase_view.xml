@@ -20,6 +20,8 @@
             <xpath expr="//field[@name='user_id']" position="after">
                  <field name="calification"/>
             </xpath>
+            <xpath expr="//field[@name='date_order']" position="replace">
+            </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
                  <field name="date_order" optional="show"/>
             </xpath>
