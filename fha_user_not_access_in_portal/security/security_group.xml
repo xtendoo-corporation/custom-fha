@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--grupo ventas acceso a ventas -->
+<!--        <record id="group_sale_salesman_not_access" model="res.groups">-->
+<!--            <field name="name">Sin acceso</field>-->
+<!--            <field name="category_id" ref="base.module_category_sales_sales"/>-->
+<!--            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+<!--            <field name="comment">the user will have access to his own data in the sales application.</field>-->
+<!--        </record>-->
+
+<!--        <record id="group_sale_salesman_not_acces_rule" model="ir.rule">-->
+<!--            <field name="name">Sin acceso</field>-->
+<!--            <field ref="sale.model_sale_order" name="model_id"/>-->
+<!--            <field name="domain_force">[('create_uid','=',user.id)]</field>-->
+<!--            <field name="perm_unlink" eval="True"/>-->
+<!--            <field name="perm_write" eval="True"/>-->
+<!--            <field name="perm_read" eval="True"/>-->
+<!--            <field name="perm_create" eval="False"/>-->
+<!--            <field name="groups" eval="[(4, ref('fha_user_not_access_in_portal.group_sale_salesman_not_access'))]"/>-->
+<!--        </record>-->
+        <!-- Fin grupo ventas acceso a ventas -->
+
+        <!-- Grupo Documentos sin acceso -->
+<!--        <record id="group_dms_not_access" model="res.groups">-->
+<!--            <field name="name">Sin acceso</field>-->
+<!--            <field name="category_id" ref="dms.category_dms_security"/>-->
+<!--            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+<!--        </record>-->
+
+<!--        <record id="access_model_1_group_dms_not_access" model="ir.model.access">-->
+<!--            <field name="name">model_1_group_dms_not_access</field>-->
+<!--            <field name="model_id"-->
+<!--                   ref="dms.model_dms_access_group"/> &lt;!&ndash; Reemplazar module_name y model_model_1 por el nombre del módulo y el ID del modelo &ndash;&gt;-->
+<!--            <field name="group_id" ref="group_dms_not_access"/>-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_write" eval="1"/>-->
+<!--            <field name="perm_create" eval="1"/>-->
+<!--            <field name="perm_unlink" eval="1"/>-->
+<!--        </record>-->
+
+
+
+
+<!--        <record id="group_dms_salesman_not_acces_storage_rule" model="ir.rule">-->
+<!--            <field name="name">Sin acceso a almacenamiento de documentos</field>-->
+<!--            <field name="model_id" ref="dms.model_dms_directory"/>-->
+<!--            <field-->
+<!--                name="groups"-->
+<!--                eval="[(4, ref('fha_user_not_access_in_portal.group_dms_not_access'))]"-->
+<!--            />-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_create" eval="1"/>-->
+<!--            <field name="perm_write" eval="1"/>-->
+<!--            <field name="perm_unlink" eval="1"/>-->
+<!--            <field name="domain_force">[('create_uid','=',user.id)]</field>-->
+<!--        </record>-->
+        <!-- Fin Grupo Documentos sin acceso -->
+
+        <!-- Grupo facturacion si acceso -->
+<!--        <record id="group_account_not_access" model="res.groups">-->
+<!--            <field name="name">Sin acceso</field>-->
+<!--            <field name="category_id" ref="base.module_category_accounting_accounting"/>-->
+<!--        </record>-->
+
+<!--        <record id="journal_not_access" model="ir.rule">-->
+<!--            <field name="name">Sin acceso</field>-->
+<!--            <field name="model_id" ref="account.model_account_journal"/>-->
+<!--            <field-->
+<!--                name="groups"-->
+<!--                eval="[(4, ref('fha_user_not_access_in_portal.group_account_not_access'))]"-->
+<!--            />-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_create" eval="1"/>-->
+<!--            <field name="perm_write" eval="1"/>-->
+<!--            <field name="perm_unlink" eval="1"/>-->
+<!--            <field name="domain_force">[('create_uid','=',user.id)]</field>-->
+<!--        </record>-->
+
+        <!-- FIn Grupo facturacion sin acceso -->
+
+        <!-- Grupo sin acceso a Proyectos -->
+
+<!--        <record id="group_project_not_access" model="res.groups">-->
+<!--            <field name="name">Sin acceso</field>-->
+<!--            <field name="category_id" ref="base.module_category_services_project"/>-->
+<!--        </record>-->
+
+<!--        <record model="ir.rule" id="project_public_members_rule_not_access">-->
+<!--            <field name="name">Sin acceso a Proyectos</field>-->
+<!--            <field name="model_id" ref="project.model_project_project"/>-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_create" eval="1"/>-->
+<!--            <field name="perm_write" eval="1"/>-->
+<!--            <field name="perm_unlink" eval="1"/>-->
+<!--            <field name="domain_force">[('create_uid','=',user.id)]</field>-->
+<!--            <field name="groups" eval="[(4, ref('fha_user_not_access_in_portal.group_project_not_access'))]"/>-->
+<!--        </record>-->
+
+<!--        <record model="ir.rule" id="project_public_members_rule_task_not_access">-->
+<!--            <field name="name">Sin acceso a Tareas</field>-->
+<!--            <field name="model_id" ref="project.model_project_task"/>-->
+<!--            <field name="perm_read" eval="1"/>-->
+<!--            <field name="perm_create" eval="1"/>-->
+<!--            <field name="perm_write" eval="1"/>-->
+<!--            <field name="perm_unlink" eval="1"/>-->
+<!--            <field name="domain_force">[-->
+<!--                '&amp;',-->
+<!--                '|',-->
+<!--                '&amp;',-->
+<!--                ('project_id', '!=', False),-->
+<!--                '|',-->
+<!--                ('project_id.privacy_visibility', '!=', 'followers'),-->
+<!--                ('project_id.message_partner_ids', 'in', [user.partner_id.id]),-->
+<!--                '|',-->
+<!--                ('message_partner_ids', 'in', [user.partner_id.id]),-->
+<!--                ('user_ids', 'in', user.id),-->
+<!--                ('create_uid', '=', user.id)-->
+<!--                ]-->
+<!--            </field>-->
+<!--            <field name="groups" eval="[(4, ref('fha_user_not_access_in_portal.group_project_not_access'))]"/>-->
+<!--        </record>-->
+
+
+<!--        <record model="ir.model.access" id="access_auth_totp_wizard">-->
+<!--            <field name="name">Sin acceso proyectos</field>-->
+<!--            <field name="model_id" ref="project.model_project_project"/>-->
+<!--            <field name="group_id" ref="fha_user_not_access_in_portal.group_project_not_access"/>-->
+<!--            <field name="perm_read">1</field>-->
+<!--            <field name="perm_write">0</field>-->
+<!--            <field name="perm_create">0</field>-->
+<!--            <field name="perm_unlink">0</field>-->
+<!--        </record>-->
+        <!-- Fin grupo sin acceso a Proyectos -->
+
+        <!-- Parte de horas -->
+<!--          <record id="group_hr_timesheet_user_not_access" model="res.groups">-->
+<!--            <field name="name">Sin acceso</field>-->
+<!--            <field name="category_id" ref="base.module_category_services_timesheets"/>-->
+<!--        </record>-->
+
+<!--        <record id="timesheet_line_rule_user_not_access" model="ir.rule">-->
+<!--            <field name="name">account.analytic.line.timesheet.user.not.access</field>-->
+<!--            <field name="model_id" ref="analytic.model_account_analytic_line"/>-->
+<!--            <field name="domain_force">[-->
+<!--                ('user_id', '=', user.id),-->
+<!--                ('project_id', '!=', False),-->
+<!--                '|', '|',-->
+<!--                    ('project_id.privacy_visibility', '!=', 'followers'),-->
+<!--                    ('project_id.message_partner_ids', 'in', [user.partner_id.id]),-->
+<!--                    ('task_id.message_partner_ids', 'in', [user.partner_id.id])-->
+<!--            ]</field>-->
+<!--            <field name="groups" eval="[(4, ref('fha_user_not_access_in_portal.group_hr_timesheet_user_not_access'))]"/>-->
+<!--        </record>-->
+
+        <!-- Fin parte de horas -->
+
+    </data>
+</odoo>
