@@ -21,4 +21,5 @@
         <field name="comment">the user will have access to create, update and delete subventions.</field>
     </record>
 
+
 </odoo>
