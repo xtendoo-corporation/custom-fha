@@ -7,7 +7,7 @@
         "hr",
         "dms",
         "dms_field",
-        "hr_dms_fields",
+        "hr_dms_field",
     ],
     "description": """
         Create DMS page  Employee.
