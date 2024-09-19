@@ -14,6 +14,7 @@
         """,
     "data": [
         "views/hr_employee_form_view.xml",
+        "views/dms_directory.xml",
     ],
     "installable": True,
     "auto_install": True,

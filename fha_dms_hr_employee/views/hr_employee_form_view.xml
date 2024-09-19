@@ -9,7 +9,7 @@
         <field name="inherit_id" ref="hr_dms_field.view_employee_form" />
         <field name="arch" type="xml">
              <xpath expr="//field[@name='dms_directory_ids']" position="replace">
-                 <field name="dms_directory_ids" mode="dms_tree" />
+                 <field name="dms_directory_ids" mode="tree" />
             </xpath>
 <!--            <notebook position="inside">-->
 <!--                <page name="dms" string="Documents" groups="hr.group_hr_manager">-->
