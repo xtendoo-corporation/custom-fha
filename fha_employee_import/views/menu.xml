@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Manuel Calero - Xtendoo.es
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+<!--    <menuitem-->
+<!--        id="menu_employee_timesheet_cost_import"-->
+<!--        name="Employee Import"-->
+<!--        action="employee_timesheet_cost_import_action"-->
+<!--        parent="hr.menu_hr_root"-->
+<!--        groups="hr.group_hr_manager"-->
+<!--    />-->
+
+<!--    <menuitem-->
+<!--            id="menu_employee_timesheet_cost_import"-->
+<!--            name="Employee Import"-->
+<!--            action="employee_timesheet_cost_import_action"-->
+<!--            parent="hr.menu_hr_root"-->
+<!--            sequence="5"/>-->
+
+     <menuitem
+            id="menu_employee_timesheet_cost_import"
+            name="Employee Import"
+            action="employee_timesheet_cost_import_action"
+            parent="hr.menu_hr_root"
+            sequence="5"/>
+
+</odoo>
