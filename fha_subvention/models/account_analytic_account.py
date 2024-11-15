@@ -14,8 +14,11 @@ class AccountAnalyticAccount(models.Model):
     def _get_default_is_subvention(self):
         return self._context.get('in_subvention_app', False)
 
-    group_id = fields.Many2one('account.analytic.group', string='Group', check_company=True)
-
+    group_id = fields.Many2one(
+        comodel_name='account.analytic.group',
+        string='Group',
+        check_company=True
+    )
     subvention = fields.Boolean(
         string="Subvention Deprecated",
         default=False,
@@ -77,6 +80,9 @@ class AccountAnalyticAccount(models.Model):
         string='Account Move Line',
     )
 
+    def _get_name(self):
+        return self.complete_name
+
     @api.depends('account_analytic_line_ids')
     def _compute_total_expense(self):
         for record in self:
@@ -96,7 +102,7 @@ class AccountAnalyticAccount(models.Model):
         for record in self.filtered(lambda r: r.total_subvention != 0):
             record.percentage_expense = abs(record.total_expense) / record.total_subvention * 100
 
-    @api.depends('name')
+    @api.depends('name', 'group_id')
     def _compute_complete_name(self):
         for record in self:
             if record.group_id:

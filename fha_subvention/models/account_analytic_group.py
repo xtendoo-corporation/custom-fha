@@ -99,16 +99,34 @@ class AccountAnalyticGroup(models.Model):
     _name = 'account.analytic.group'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _parent_store = True
-    _rec_name = 'name'
+    _rec_name = 'complete_name'
 
-    name = fields.Char(required=True)
-    description = fields.Text(string='Description')
-    parent_id = fields.Many2one('account.analytic.group', string="Parent", ondelete='cascade',
-                                domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]")
-    parent_path = fields.Char(index=True)
-    children_ids = fields.One2many('account.analytic.group', 'parent_id', string="Childrens")
-    complete_name = fields.Char('Complete Name', compute='_compute_complete_name', recursive=True, store=True)
-    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company)
+    name = fields.Char(
+        required=True
+    )
+    description = fields.Text(
+        string='Description'
+    )
+    parent_id = fields.Many2one(
+        comodel_name='account.analytic.group',
+        string="Parent",
+        ondelete='cascade',
+        domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]"
+    )
+    parent_path = fields.Char(
+        index=True
+    )
+    children_ids = fields.One2many(
+        'account.analytic.group',
+        'parent_id',
+        string="Childrens"
+    )
+    complete_name = fields.Char(
+        'Complete Name',
+        compute='_compute_complete_name',
+        recursive=True,
+        store=True
+    )
 
     @api.depends('name', 'parent_id.complete_name')
     def _compute_complete_name(self):
@@ -117,25 +135,34 @@ class AccountAnalyticGroup(models.Model):
                 group.complete_name = '%s / %s' % (group.parent_id.complete_name, group.name)
             else:
                 group.complete_name = group.name
-    complete_name = fields.Char('Complete Name', compute='_compute_complete_name', recursive=True, store=True)
-    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company)
 
+    company_id = fields.Many2one(
+        'res.company',
+        string='Company',
+        default=lambda self: self.env.company
+    )
     is_readonly = fields.Boolean(
         string='Read Only',
         compute='_compute_readonly_subvention',
     )
 
-    def _get_default_is_subvention(self):
-        return self._context.get('in_subvention_app', False)
+    def _compute_readonly_subvention(self):
+        for record in self:
+            record.is_readonly = not self.env.user.has_group('fha_subvention.group_fha_administrator_subvention')
 
     subvention = fields.Boolean(
         string='Subvention Deprecated',
         default=False,
     )
+
+    def _get_default_is_subvention(self):
+        return self._context.get('in_subvention_app', False)
+
     is_subvention = fields.Boolean(
         string='Is Subvention',
         default=_get_default_is_subvention,
     )
+
     code = fields.Char(
         string='Subvention Code',
         help='Code of subvention.',
@@ -201,6 +228,12 @@ class AccountAnalyticGroup(models.Model):
         currency_field='currency_id',
         compute='_compute_justified_subvention',
     )
+
+    @api.depends('account_analytic_account_ids')
+    def _compute_justified_subvention(self):
+        for record in self:
+            record.justified_subvention = sum(record.account_analytic_account_ids.mapped('total_expense'))
+
     project_id = fields.Many2one(
         'project.project',
         string='Project',
@@ -209,15 +242,6 @@ class AccountAnalyticGroup(models.Model):
         check_company=True,
         change_default=True,
     )
-
-    def _compute_readonly_subvention(self):
-        for record in self:
-            record.is_readonly = not self.env.user.has_group('fha_subvention.group_fha_administrator_subvention')
-
-    @api.depends('account_analytic_account_ids')
-    def _compute_justified_subvention(self):
-        for record in self:
-            record.justified_subvention = sum(record.account_analytic_account_ids.mapped('total_expense'))
 
     @api.model
     def default_get(self, fields):

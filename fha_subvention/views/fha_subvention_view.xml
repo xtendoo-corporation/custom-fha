@@ -4,7 +4,7 @@
         <field name="name">Subventions</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">account.analytic.group</field>
-        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="view_mode">tree,kanban,form,activity</field>
         <field name="domain">[('is_subvention', '=', True)]</field>
         <field name="context">{'default_is_subvention': True}</field>
         <field name="help" type="html">
@@ -15,12 +15,12 @@
     </record>
 
     <record id="open_wizard" model="ir.actions.act_window">
-            <field name="name">Timesheets Report</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">account.analytic.line.report.wizard</field>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="account_analytic_line_report_wizard_form"/>
-            <field name="target">new</field>
+        <field name="name">Timesheets Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.analytic.line.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account_analytic_line_report_wizard_form"/>
+        <field name="target">new</field>
     </record>
 
     <!-- Fin Actions -->
@@ -58,20 +58,6 @@
         </field>
     </record>
 
-    <record id="fha_subvention.fha_subvention_view_filter" model="ir.ui.view">
-        <field name="name">fha.subvention.view.filter</field>
-        <field name="model">account.analytic.group</field>
-        <field name="priority" eval="1"/>
-        <field name="arch" type="xml">
-            <search string="Search Subvention">
-                <filter string="Date Init" name="filter_create_date" date="date_init"/>
-                <filter string="Date End" name="filter_create_date" date="date_end"/>
-                <group expand="0" string="Group By">
-                    <filter string="Entity" name="partner_id" context="{'group_by': 'partner_id'}"/>
-                </group>
-            </search>
-        </field>
-    </record>
     <menuitem name="Subventions"
               id="fha_subvention_menu"
               sequence="6"

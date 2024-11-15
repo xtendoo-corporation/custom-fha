@@ -1,23 +1,69 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
      <record id="account_analytic_group_tree_view" model="ir.ui.view">
-            <field name="name">account.analytic.group.tree</field>
-            <field name="model">account.analytic.group</field>
-            <field name="arch" type="xml">
-                <tree string="Analytic Account Groups">
-                    <field name="name"/>
-                    <field name="code"/>
-                <field name="date_init"/>
-                <field name="date_end"/>
-                <field name="partner_id"/>
-                <field name="currency_id" invisible="1"/>
-                <field name="total_subvention" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                <field name="annual_subvention" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                <field name="annual_spend" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                    <field name="company_id" groups="base.group_multi_company"/>
-                </tree>
-            </field>
-        </record>
+        <field name="name">account.analytic.group.tree</field>
+        <field name="model">account.analytic.group</field>
+        <field name="arch" type="xml">
+            <tree string="Analytic Account Groups">
+                <field name="name"/>
+                <field name="code"/>
+            <field name="date_init"/>
+            <field name="date_end"/>
+            <field name="partner_id"/>
+            <field name="currency_id" invisible="1"/>
+            <field name="total_subvention" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            <field name="annual_subvention" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            <field name="annual_spend" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_account_analytic_group_search" model="ir.ui.view">
+        <field name="name">account.analytic.group.search</field>
+        <field name="model">account.analytic.group</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Search Subvention">
+                <field name="name" string="Subvention" />
+                <field name="code" string="Code" />
+
+                <filter string="Date Init" name="filter_create_date" date="date_init"/>
+                <filter string="Date End" name="filter_create_date" date="date_end"/>
+                <group expand="0" string="Group By">
+                    <filter string="Entity" name="partner_id" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Company" name="company_id" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+<!--    <record model="ir.ui.view" id="view_account_analytic_group_search">-->
+<!--        <field name="name">account.analytic.group.search</field>-->
+<!--        <field name="model">account.analytic.group</field>-->
+<!--        <field name="type">search</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search string="Analytic Account Groups">-->
+<!--                <filter-->
+<!--                    string="Subvention"-->
+<!--                    name="subvention"-->
+<!--                    help="Subvention"-->
+<!--                    domain="[('is_subvention', '=', True)]"-->
+<!--                />-->
+<!--                <field name="name" string="Subvention" />-->
+<!--                <field name="code" string="Code" />-->
+<!--                <group expand="0" string="Group By...">-->
+<!--                    <filter-->
+<!--                        string="Company"-->
+<!--                        name="company_id"-->
+<!--                        domain="[]"-->
+<!--                        context="{'group_by':'company_id'}"-->
+<!--                    />-->
+<!--                </group>-->
+<!--            </search>-->
+<!--        </field>-->
+<!--    </record>-->
+
 <!--    <record id="fha_subvention.account_analytic_group_tree_view" model="ir.ui.view">-->
 <!--        <field name="name">account.analytic.group.tree.view</field>-->
 <!--        <field name="model">account.analytic.group</field>-->
