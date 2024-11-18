@@ -7,7 +7,8 @@
         <field name="inherit_id" ref="purchase.purchase_order_form" />
         <field name="arch" type="xml">
             <field name="department_id" position="after">
-                <field name="subvention_id" domain="[('is_subvention','=',True)]"/>
+                <field name="subvention_id" widget="many2one" />
+<!--                domain="[('is_subvention','=',True)]"-->
             </field>
         </field>
     </record>

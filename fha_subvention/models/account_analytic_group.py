@@ -146,6 +146,12 @@ class AccountAnalyticGroup(models.Model):
         compute='_compute_readonly_subvention',
     )
 
+    def name_get(self):
+        result = []
+        for record in self:
+            result.append((record.id, record.name))
+        return result
+
     def _compute_readonly_subvention(self):
         for record in self:
             record.is_readonly = not self.env.user.has_group('fha_subvention.group_fha_administrator_subvention')
