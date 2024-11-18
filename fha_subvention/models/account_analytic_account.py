@@ -11,6 +11,15 @@ class AccountAnalyticAccount(models.Model):
     _rec_name = 'complete_name'
     _order = 'complete_name'
 
+    def search(self, args=None, offset=0, limit=None, order=None, count=False):
+        args = args or []
+        if not args:
+            return super(AccountAnalyticAccount, self).search(args, offset, limit, order, count)
+        for condition in args:
+            if condition[0] == 'name':
+                condition[0] = 'complete_name'
+        return super(AccountAnalyticAccount, self).search(args, offset, limit, order, count)
+
     def _get_default_is_subvention(self):
         return self._context.get('in_subvention_app', False)
 
