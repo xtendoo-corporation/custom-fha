@@ -156,7 +156,7 @@
                                 <button name="action_show_expenses"
                                         string="Account Analytic Line"
                                         type="object"
-                                        icon="fa-list" />
+                                        icon="fa-list" groups="fha_subvention.group_fha_administrator_subvention"/>
                             </tree>
                             <form>
                                 <group>
