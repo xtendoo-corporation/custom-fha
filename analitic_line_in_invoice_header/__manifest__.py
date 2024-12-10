@@ -9,10 +9,12 @@
     "category": "account",
     "depends": [
         "account",
+        "purchase",
     ],
     "license": "AGPL-3",
     "data": [
         "views/invoice_view.xml",
+        "views/purchase_order.xml",
     ],
     "installable": True,
     "auto_install": True,
