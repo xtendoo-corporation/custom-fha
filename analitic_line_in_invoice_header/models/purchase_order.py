@@ -4,7 +4,7 @@ from odoo import api, fields, models, Command, _
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    analytic_distribution = fields.Json(string='Analytic Distribution')
+    analytic_distribution = fields.Json(string='Analytic Distribution', required=True,)
     analytic_precision = fields.Integer(
         store=False,
         default=lambda self: self.env['decimal.precision'].precision_get("Percentage Analytic"),

@@ -5,5 +5,4 @@ class PurchaseOrder(models.Model):
 
     subvention_id = fields.Many2one(
         comodel_name="account.analytic.group",
-        required=True,
     )
