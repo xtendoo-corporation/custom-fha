@@ -37,6 +37,10 @@ class AccountMoveLine(models.Model):
 
     def create_analytic_lines(self):
         context = self.env.context.copy()
+        print("*" * 50)
+        print("ENTRA EN CREATE ANALYTIC LINES")
+        print("context",context)
+        print("*" * 50)
         context.update({'in_subvention_app': True})
         self.env.context = context
         return super().create_analytic_lines()

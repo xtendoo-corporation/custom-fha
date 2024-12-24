@@ -52,6 +52,66 @@ class AccountAnalyticLine(models.Model):
         compute='_compute_justified_amount',
     )
 
+    @api.model
+    def create(self, vals):
+        if not vals.get('move_id'):
+            if vals.get('move_line_id'):
+                vals['move_id'] = vals['move_line_id']
+        record = super().create(vals)
+        return record
+
+    @api.model
+    def init(self):
+        print("*" * 50)
+        print("ENTRA EN INIT")
+        # Inicializar la variable para contar los registros sin asignar move_id
+        no_move_id = 0
+
+        # Filtrar los registros específicos
+        record_ids = self.env['account.analytic.line'].search([])
+
+        for record in record_ids:
+            if not record.move_id:
+                print(f"NO TIENE MOVE_ID: {record.name}")
+
+                # Buscar líneas de movimientos con misma descripción y fecha
+                account_move_line_ids = self.env['account.move.line'].search([
+                    ('name', '=', record.name),
+                    ('date', '=', record.date),
+                ])
+
+                print(f"account_move_line_ids encontrados: {account_move_line_ids}")
+
+                assigned = False  # Bandera para verificar si se asignó un move_id
+
+                if len(account_move_line_ids) == 1:
+                    # Si solo hay una coincidencia, asignar directamente
+                    print("Solo 1 coincidencia, se asigna.")
+                    record.move_id = account_move_line_ids[0].id
+                    assigned = True
+                else:
+                    print("Más de 1 coincidencia.")
+                    for account_move_line_id in account_move_line_ids:
+                        # Verificar si ya está asignado en algún registro
+                        is_in_move_id = any(
+                            analytic_record.move_id.id == account_move_line_id.id
+                            for analytic_record in record_ids
+                        )
+                        if not is_in_move_id:
+                            print(f"Asignando {account_move_line_id.id} a {record.id}")
+                            record.move_id = account_move_line_id.id
+                            assigned = True
+                            break  # Salir del bucle al encontrar una coincidencia libre
+                        else:
+                            print(f"{account_move_line_id.id} ya está ocupado.")
+
+                # Incrementar el contador si no se asignó ningún move_id
+                if not assigned:
+                    no_move_id += 1
+
+        print(f"Total registros sin asignar move_id: {no_move_id}")
+        print("*" * 50)
+
     @api.depends('amount')
     def _compute_amount(self):
         for record in self:

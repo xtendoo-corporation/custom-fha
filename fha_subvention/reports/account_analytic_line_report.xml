@@ -141,25 +141,25 @@
 
     <template id="fha_subvention.account_analytic_line_columns_pdf">
         <t t-name="account_analytic_line_columns_pdf">
-            <tr style="line-height:10px; margin: 0px 0px 0px 0px; border: 2px;">
-                <td>
+            <tr style="margin: 0px 0px 0px 0px; border: 2px;">
+                <td style="text-align: left;line-height:20px;">
                     <span>&#160; &#160; &#160; &#160; &#160; &#160;</span>
                     <span t-field="report_lines.move_id.move_id"/>
                 </td>
-                <td>
+                 <td style="padding: 0 5px; text-align: left; white-space: nowrap; width: 100px;line-height:10px;">
                     <span t-esc="report_lines.date.strftime('%d-%m-%Y')"/>
                 </td>
                 <td>
                     <span t-field="report_lines.name"/>
                 </td>
-                <td style="text-align: right;">
+                <td style="padding: 0 5px; text-align: right; white-space: nowrap;line-height:10px;">
                     <span t-field="report_lines.amount"
                           t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                 </td>
-                <td style="text-align: right;">
+                <td style="padding: 0 5px; text-align: right; white-space: nowrap;line-height:10px;">
                     <span t-field="report_lines.account_id.percentage"/>%
                 </td>
-                <td style="text-align: right;">
+                <td style="padding: 0 5px; text-align: right; white-space: nowrap;line-height:10px;">
                     <span t-field="report_lines.justified_amount"
                           t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                 </td>

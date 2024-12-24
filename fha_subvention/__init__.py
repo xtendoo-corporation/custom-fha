@@ -6,7 +6,6 @@ from . import wizards
 from . import reports
 
 from odoo import api, SUPERUSER_ID
-
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -31,4 +30,8 @@ def uninstall_hook(cr, registry):
             groups.unlink()
     except:
         pass
+
+
+
+
 

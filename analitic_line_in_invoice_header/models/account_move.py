@@ -14,6 +14,7 @@ class AccountMove(models.Model):
     def _onchange_quick_edit_line_ids(self):
         res = super()._onchange_quick_edit_line_ids()
         for line in self.invoice_line_ids:
-            if hasattr(line, 'analytic_distribution'):
-                line.analytic_distribution = self.analytic_distribution
+            if not line.analytic_distribution:
+                if hasattr(line, 'analytic_distribution'):
+                    line.analytic_distribution = self.analytic_distribution
         return res
